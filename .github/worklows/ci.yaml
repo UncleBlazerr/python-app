@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     paths:
-      -src/**
+      - src/**
     branches:
       - main
 
@@ -22,4 +22,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: eggystrone/python-app:${GITHUB_SHA::6}
+          tags: eggystrone/python-app:${{github.sha}}
