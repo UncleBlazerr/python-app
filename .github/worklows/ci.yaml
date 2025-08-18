@@ -2,24 +2,30 @@ name: ci
 
 on:
   push:
+    branches: [ main ]
     paths:
-      - src/**
-    branches:
-      - main
+      - 'src/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+  workflow_dispatch:
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to Docker Hub
+      - uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Build and push
+
+      - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: .
           push: true
-          tags: eggystrone/python-app:${{github.sha}}
+          tags: eggystrone/python-app:${{ github.sha }}
