@@ -34,7 +34,7 @@ jobs:
     runs-on: self-hosted
     steps:
 
-      - name : Install Argo
+      - name : Install Argocd
         shell: bash
         run: |
           curl -k -sSL -o argocd-linux-amd64 https://argocd-server.argocd/download/argocd-linux-amd64
