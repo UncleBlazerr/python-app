@@ -45,7 +45,7 @@ jobs:
         shell: bash
         run: |
           #install argocd
-          argocd login argocd-server.argocd  \
+          argocd login argo-cd-argocd-server.argocd  \
             --insecure \
             --grpc-web \
             --username admin \
