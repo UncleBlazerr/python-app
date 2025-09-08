@@ -33,7 +33,7 @@ jobs:
     needs: ci
     runs-on: self-hosted
     steps:
-        #installing argo
+        #installing argocd
       - name : Install Argocd
         shell: bash
         run: |
