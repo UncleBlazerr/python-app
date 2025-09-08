@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: eggystrone/python-app
-  tag: 60c09c11b5f66dc811714e93eab1782ad752ba9d
+  tag: be5634d711f8df331424581ab106e160e5e61166
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: regcred
