@@ -3,13 +3,21 @@ import datetime
 import socket
 
 app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return jsonify({
+        'message': 'Python App is running!',
+        'endpoints': ['/api/v1/details', '/api/v1/healthz']
+    })
+
 @app.route('/api/v1/details')
 
 def details():
     return jsonify({
         'time': datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y"),
         'hostname': socket.gethostname(),
-        'message': 'You are doing great, humans!t!!$#'
+        'message': 'You are doing great, humans!l!!$#'
         })
 
 @app.route('/api/v1/healthz')
