@@ -11,13 +11,14 @@ def home():
         'endpoints': ['/api/v1/details', '/api/v1/healthz']
     })
 
-@app.route('/api/v1/details')
+@app.route('/api/v1/info')
 
-def details():
+def info():
     return jsonify({
         'time': datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y"),
         'hostname': socket.gethostname(),
-        'message': 'You are doing great, humansz@!#3333#@@!'
+        'message': 'You are doing great, humansz@!#3333#@@!',
+        'deployed_on': 'kubernetes'
         })
 
 @app.route('/api/v1/healthz')
