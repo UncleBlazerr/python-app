@@ -45,7 +45,7 @@ jobs:
       - name : Argocd app sync
         shell: bash
         run: |
-          #install argo
+          #install argocd
           argocd login argocd-server.argocd  \
             --insecure \
             --grpc-web \
