@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-app
+  description: This displays the time 
+  # Example for optional annotations
+  annotations:
+     github.com/project-slug: UncleBlazerr/python-app
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental
